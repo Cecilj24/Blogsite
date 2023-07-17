@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
-const routes = require('./controllers/index');
+const routes = require('./controllers');
 const mysql = require('mysql2');
 
 
@@ -37,10 +37,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/', routes);
+
 
 app.get('/', (req, res) =>{
-    res.render('layouts/main');
+    res.render('views/layouts');
 });
 
 app.listen(PORT, () => {
