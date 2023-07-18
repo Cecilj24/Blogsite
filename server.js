@@ -32,7 +32,7 @@ app.engine('handlebars', hbs.engine);
 app.set ('view engine', 'handlebars');
 const path = require('path');
 app.use(express.json());
-app.use(express.static("public"));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -40,9 +40,12 @@ app.use('/', routes);
 
 
 app.get('/', (req, res) =>{
-    res.render('views/layouts');
+    res.render('login');
 });
 
-app.listen(PORT, () => {
-    console.log('Server listening on: http://localhost:' + PORT);
+
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT));
 });
+
+

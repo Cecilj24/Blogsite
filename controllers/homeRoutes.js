@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-router.post('/', (req, res) => {
-    res.send('layouts/main')
+router.get('/', (req, res) => {
+    res.render('homepage')
 })
 
 router.get("/login", (req, res) =>{
@@ -10,7 +10,9 @@ router.get("/login", (req, res) =>{
         return;
     }
     res.render("login")
-})
+});
+
+
 
 
 module.exports = router
