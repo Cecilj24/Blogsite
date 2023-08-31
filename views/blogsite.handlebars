@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <h1>
-        Welcome to my Blogsite, to make a post click on the blog button below
-    </h1>
-    <label>
-        Title
-    </label>
-    <input type="text" id="titlePost">
-    <br>
-    <label for="">
-        Post
-    </label>
-    <textarea id="post">
 
-    </textarea>
-    <br>
-    <button id="BlogpostBtn">
-        New Blogpost
-    </button>
+<head>
+  <meta charset="UTF-8">
+  {{!--
+  <meta name="viewport" content="width, initial-scale=1.0"> --}}
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-auto">
+      <h2>Welcome, {{user.email}}!</h2>
     </div>
+  </div>
+
+  <div className='Contact'>
+    <div className="Name">
+      <label>Name</label>
+      <input type="Name" class="form-control" placeholder="Ex. john-doe"></input>
+    </div>
+    <br />
+    <div className="post">
+      <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+      <textarea class="form-control" placeholder='Please type message here' rows="6"></textarea>
+    </div>
+    <div className='submitBtn'>
+      <button type="submit">
+        <a href="/messages/{{message.id}}">{{message.name}}</a>
+        Send
+      </button>
+    </div>
+  </div>
+
+
+
 </body>
 
 <script src="/js/blogsite.js"></script>
+
 </html>

@@ -4,8 +4,8 @@ router.get('/', (req, res) => {
     res.render('homepage')
 })
 
-router.get("/login", (req, res) =>{
-    if(req.session.loggedIn) {
+router.get("/login", (req, res) => {
+    if (req.session.loggedIn) {
         res.redirect("blogsite");
         return;
     }
@@ -18,8 +18,8 @@ router.get("/aboutUs", (req, res) => {
     res.render("aboutUs")
 });
 
-router.get("/signup", (req,res) => {
-    res.render("signup")
+router.get("/messages", (req, res) => {
+    res.render("messages")
 });
 
 router.get("/blogsite", (req, res) => {
